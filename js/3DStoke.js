@@ -11,46 +11,7 @@
 
 
 
-$().ready(function () {
 
-
-var len=$('.threeDstoke').length;
-var gradient1 = new gradientColor('#E50743','#F9870F',len);
-var gradient2 = new gradientColor('#F9870F','#E8ED30',len);
-var gradient3 = new gradientColor('#E8ED30','#3FA62E',len);
-var gradient4 = new gradientColor('#3FA62E','#3BB4D7',len);
-var gradient5 = new gradientColor('#3BB4D7','#2F4D9E',len);
-var gradient6 = new gradientColor('#2F4D9E','#71378A',len);
-var gradients= gradient1.concat(gradient2).concat(gradient3).concat(gradient4).concat(gradient5).concat(gradient6);
-
-
-
-$('.threeDstoke').each(function (index,ele) {
-
-	
-	
-	
-	$(ele).html('<div class="top"></div><div class="side1"></div><div class="side2"></div><div class="side3"></div><div class="side4"></div><div class="bottom"></div>');
-	
-	
-//	setTimeout(function () {
-		
-		$(ele).find('div').css('background-color',gradients[Math.floor(gradients.length*index/len)]);
-		$(ele).find('div').css('border','solid 1px '+(gradients[Math.floor(gradients.length*index/len)]).replace(',0.1)',',1)'));
-		
-//	},10);
-	
-	
-	
-	
-})
-//resetstoke();
-
-
-
-
-
-})
    function gradientColor(startColor,endColor,step){
        startRGB = this.colorRgb(startColor);//转换为rgb数组模式
        startR = startRGB[0];
@@ -136,7 +97,7 @@ $('.threeDstoke').each(function (index,ele) {
  
  
  
-if ("undefined" == typeof jQuery) throw new Error("Bootstrap's JavaScript requires jQuery"); 
+if ("undefined" == typeof jQuery) throw new Error("requires jQuery"); 
 +(function ($) {
 	
 	
@@ -205,5 +166,50 @@ if ("undefined" == typeof jQuery) throw new Error("Bootstrap's JavaScript requir
 	
 	
 	
+	$().ready(function () {
+var threeDstokeNum=40;
+
+for(var i=0;i<threeDstokeNum;i++)
+{
+	$('#threeDstoke').append('<div class="threeDstoke"></div>');
+}
+
+var len=$('.threeDstoke').length;
+var gradient1 = new gradientColor('#E50743','#F9870F',len);
+var gradient2 = new gradientColor('#F9870F','#E8ED30',len);
+var gradient3 = new gradientColor('#E8ED30','#3FA62E',len);
+var gradient4 = new gradientColor('#3FA62E','#3BB4D7',len);
+var gradient5 = new gradientColor('#3BB4D7','#2F4D9E',len);
+var gradient6 = new gradientColor('#2F4D9E','#71378A',len);
+var gradients= gradient1.concat(gradient2).concat(gradient3).concat(gradient4).concat(gradient5).concat(gradient6);
+
+
+
+$('.threeDstoke').each(function (index,ele) {
+
 	
+	
+	
+//	$(ele).html('<div class="top"></div><div class="side1"></div><div class="side2"></div><div class="side3"></div><div class="side4"></div><div class="bottom"></div>');
+	$(ele).html('<div class="side1"></div><div class="side2"></div><div class="side3"></div><div class="side4"></div>');
+	
+	
+//	setTimeout(function () {
+		
+		$(ele).find('div').css('background-color',gradients[Math.floor(gradients.length*index/len)]);
+		$(ele).find('div').css('border','solid 1px '+(gradients[Math.floor(gradients.length*index/len)]).replace(',0.1)',',1)'));
+		
+//	},10);
+	
+	
+	
+	
+})
+//resetstoke();
+
+
+
+
+
+})
 })(jQuery)
