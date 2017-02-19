@@ -115,7 +115,7 @@ if ("undefined" == typeof jQuery) throw new Error("requires jQuery");
 //		$(this).find(".side1,.side2,.side3,.side4").css('height',(len+10)+'px');
 //		$(this).find(".bottom").css('transform','translateY('+(len+5)+'px) rotateX(90deg)');
 		$(this).find(".side1,.side2,.side3,.side4").css('height',(newlen+10)+'px');
-		$(this).find(".bottom").css('transform','translateY('+(newlen+5)+'px) rotateX(90deg)');
+//		$(this).find(".bottom").css('transform','translateY('+(newlen+5)+'px) rotateX(90deg)');
 		
 		
 		
@@ -145,19 +145,19 @@ if ("undefined" == typeof jQuery) throw new Error("requires jQuery");
 				if (newlen<=0) {
 					newlen=0;
 					self.find(".side1,.side2,.side3,.side4").css('height',(newlen+10)+'px');
-					self.find(".bottom").css('transform','translateY('+(newlen+5)+'px) rotateX(90deg)');
+//					self.find(".bottom").css('transform','translateY('+(newlen+5)+'px) rotateX(90deg)');
 					self.data('progress', null);
 				}
 				else
 				{
 					self.find(".side1,.side2,.side3,.side4").css('height',(newlen+10)+'px');
-					self.find(".bottom").css('transform','translateY('+(newlen+5)+'px) rotateX(90deg)');
+//					self.find(".bottom").css('transform','translateY('+(newlen+5)+'px) rotateX(90deg)');
 					resetstoke(self);
 				}
 
 		
 	
-	},400)
+	},500)
 }
 	
 	$.fn.stokeNobi=StokeNobi;
@@ -167,7 +167,7 @@ if ("undefined" == typeof jQuery) throw new Error("requires jQuery");
 	
 	
 	$().ready(function () {
-var threeDstokeNum=40;
+var threeDstokeNum=30;
 
 for(var i=0;i<threeDstokeNum;i++)
 {
